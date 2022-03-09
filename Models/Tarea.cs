@@ -1,7 +1,7 @@
 namespace FundamentosEFPlatzi;
 
 public class Tarea 
-{    
+{   
     public Guid TareaId {get;set;}
     public Guid CategoriaId {get;set;}
     public string Titulo {get;set;}
