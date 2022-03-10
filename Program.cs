@@ -12,7 +12,7 @@ app.MapGet("/", () => "Hello World!");
 app.MapGet("/dbconection", async ([FromServices] TareaContext dbContext) =>
     {
         dbContext.Database.EnsureCreated();
-        return Results.Ok("Database created:" + dbContext.Database.IsInMemory());
+        return Results.Ok("Database InMemory:" + dbContext.Database.IsInMemory());
     });
 
 app.Run();
