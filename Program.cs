@@ -26,4 +26,13 @@ app.MapGet("/api/tareas", async ([FromServices] TareaContext dbContext) =>
     return Results.Ok(dbContext.Tareas.Include(p=> p.Categoria));
 });
 
+app.MapPost("/api/tareas", async ([FromServices] TareaContext dbContext, [FromBody] Tarea tarea) =>
+{
+    tarea.TareaId = Guid.NewGuid();
+    tarea.FechaCreacion = DateTime.Now;
+    await dbContext.AddAsync(tarea);
+    await dbContext.SaveChangesAsync();
+    return Results.Ok();
+});
+
 app.Run();
