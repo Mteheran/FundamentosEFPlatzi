@@ -5,22 +5,22 @@ namespace FundamentosEFPlatzi;
 
 public class Tarea 
 {   
-    [Key]
-    [Column(Order=1)]
+    //[Key]
+    //[Column(Order=1)]
     public Guid TareaId {get;set;}
 
-    [ForeignKey("CategoriaId")]
+    //[ForeignKey("CategoriaId")]
     public Guid CategoriaId {get;set;}
 
-    [Required]
-    [MaxLength(150),MinLength(5)]
+    //[Required]
+    //[MaxLength(150),MinLength(5)]
     public string Titulo {get;set;}
     public  string Descripcion {get;set;}
     public Prioridad PrioridadTarea {get;set;}
     public DateTime FechaCreacion {get;set;}
     public virtual Categoria Categoria {get;set;}
 
-    [NotMapped]
+    //[NotMapped]
     public string Resumen {get;set;}
 }
 
