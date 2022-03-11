@@ -4,6 +4,7 @@ using FundamentosEFPlatzi;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundamentosEFPlatzi.Migrations
 {
     [DbContext(typeof(TareaContext))]
-    partial class TareaContextModelSnapshot : ModelSnapshot
+    [Migration("20220311194141_categoriaPesoColumn")]
+    partial class categoriaPesoColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

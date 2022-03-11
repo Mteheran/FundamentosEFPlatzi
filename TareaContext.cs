@@ -16,7 +16,7 @@ public class TareaContext : DbContext
 
             categoria.HasKey(p=> p.CategoriaId);
 
-            categoria.Property(p=> p.Nombre).IsRequired().HasMaxLength(150);
+            categoria.Property(p=> p.Nombre).IsRequired().HasMaxLength(250);
 
             categoria.Property(p=> p.Descripcion);
         });       

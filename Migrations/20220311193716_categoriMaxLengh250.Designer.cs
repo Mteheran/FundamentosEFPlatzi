@@ -4,6 +4,7 @@ using FundamentosEFPlatzi;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundamentosEFPlatzi.Migrations
 {
     [DbContext(typeof(TareaContext))]
-    partial class TareaContextModelSnapshot : ModelSnapshot
+    [Migration("20220311193716_categoriMaxLengh250")]
+    partial class categoriMaxLengh250
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,9 +38,6 @@ namespace FundamentosEFPlatzi.Migrations
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
-
-                    b.Property<int>("Peso")
-                        .HasColumnType("int");
 
                     b.HasKey("CategoriaId");
 
