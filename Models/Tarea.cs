@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FundamentosEFPlatzi;
 
@@ -21,6 +22,7 @@ public class Tarea
     public virtual Categoria Categoria {get;set;}
 
     //[NotMapped]
+    [JsonIgnore]
     public string Resumen {get;set;}
 }
 
