@@ -39,7 +39,7 @@ app.MapPut("/api/tareas/{id}", async ([FromServices] TareaContext dbContext, [Fr
 {
     var tareaActual = dbContext.Tareas.Find(id);
 
-    if(tarea!=null)
+    if(tareaActual!=null)
     {
         tareaActual.CategoriaId = tarea.CategoriaId;
         tareaActual.Titulo = tarea.Titulo;
