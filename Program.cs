@@ -39,7 +39,7 @@ app.MapPut("/api/tareas/{id}", async ([FromServices] TareaContext dbContext, [Fr
 {
     var tareaActual = dbContext.Tareas.Find(id);
 
-    if(tarea!=null)
+    if(tareaActual!=null)
     {
         tareaActual.CategoriaId = tarea.CategoriaId;
         tareaActual.Titulo = tarea.Titulo;
@@ -53,5 +53,22 @@ app.MapPut("/api/tareas/{id}", async ([FromServices] TareaContext dbContext, [Fr
    
     return Results.NotFound();
 });
+
+app.MapDelete("/api/tareas/{id}", async ([FromServices] TareaContext dbContext, [FromRoute] Guid id) =>
+{
+    var tareaActual = dbContext.Tareas.Find(id);
+
+    if(tareaActual !=null)
+    {       
+        dbContext.Remove(tareaActual);
+        await dbContext.SaveChangesAsync();
+
+        return Results.Ok();
+    }
+   
+    return Results.NotFound();
+});
+
+
 
 app.Run();
